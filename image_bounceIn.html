@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background: #333;
+        }
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .wrapper{
+            width:980px;
+            height:435px;
+            background:#fff;
+            margin:27px auto;
+            padding:25px;
+            text-align: center;
+        }
+        .wrapper ul{
+            padding:5px;
+            margin:0px;
+        }
+        .wrapper li{
+            position:relative;
+            width:297px;
+            height:198px;
+            float:left;
+            margin-right:15px;
+            margin-bottom:15px;
+            overflow:hidden;
+            cursor:pointer;
+            background:#eee;
+            list-style-type: none;
+        }
+        .txt{
+            position:absolute;
+            width:297px;
+            height:0;
+            background:rgba(0,0,0,0.6);/*透明背景色，不透明其文字内容*/
+            left:0;
+            bottom:0;
+            color:#fff;
+            font-family:"微软雅黑",sans-serif;
+            transition: height 0.3s ease;
+        }
+        .txt h3{
+            font-size:20px;
+            font-weight:100;
+            height:45px;
+            text-align:center;
+            line-height:45px;
+            margin-top:6px;
+            margin-bottom: 1px;
+        }
+        .txt p{
+            font-size:15px;
+            text-align:center;
+            width:90%;
+            margin:0 auto;
+            height:30px;
+        }
+        .current .txt{
+            height:120px;
+        }
+        .btn{
+            position:absolute;
+            width:200px;
+            height:150px;
+            left:50%;
+            top:50%;
+            margin:-75px 0 0 -100px;
+            box-shadow: 0 10px 10px #dcdcdc;
+        }
+        .btn img{
+            display:block;
+            width:100%;
+            height:100%;
+            border:1px solid #dddddd;
+            border-radius:6px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <ul class="clearfix">
+        <li>
+            <div class="btn"><img src="image/500x300_1.jpg"></div>
+            <div class="txt">
+                <h3>夜晚</h3>
+                <p>柔和的灯光下，听听轻音乐配上一杯清茶或者美味的零食,再看上一本小说。</p>
+            </div>
+        </li>
+        <li>
+            <div class="btn"><img src="image/500x300_2.jpg"></div>
+            <div class="txt">
+                <h3>夜晚</h3>
+                <p>柔和的灯光下，听听轻音乐配上一杯清茶或者美味的零食,再看上一本小说。</p>
+            </div>
+        </li>
+        <li>
+            <div class="btn"><img src="image/500x300_3.jpg"></div>
+            <div class="txt">
+                <h3>夜晚</h3>
+                <p>柔和的灯光下，听听轻音乐配上一杯清茶或者美味的零食,再看上一本小说。</p>
+            </div>
+        </li>
+        <li>
+            <div class="btn"><img src="image/500x300_4.jpg"></div>
+            <div class="txt">
+                <h3>夜晚</h3>
+                <p>柔和的灯光下，听听轻音乐配上一杯清茶或者美味的零食,再看上一本小说。</p>
+            </div>
+        </li>
+        <li>
+            <div class="btn"><img src="image/500x300_5.jpg"></div>
+            <div class="txt">
+                <h3>夜晚</h3>
+                <p>柔和的灯光下，听听轻音乐配上一杯清茶或者美味的零食,再看上一本小说。</p>
+            </div>
+        </li>
+        <li>
+            <div class="btn"><img src="image/500x300_6.jpg"></div>
+            <div class="txt">
+                <h3>夜晚</h3>
+                <p>柔和的灯光下，听听轻音乐配上一杯清茶或者美味的零食,再看上一本小说。</p>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<script src="jquery-3.1.0.js"></script>
+<script>
+    $('.wrapper .btn').hover(function (e) {
+        $(this).parent().addClass('current').siblings().removeClass('current');
+    });
+    $('.wrapper li').mouseleave(function (e) {
+        $(this).removeClass('current');
+    });
+    /*$('.wrapper .btn').click(function (e) {
+        $(this).parent().addClass('current').siblings().removeClass('current');
+    })*/
+</script>
+</body>
+</html>
